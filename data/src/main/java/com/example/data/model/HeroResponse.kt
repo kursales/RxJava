@@ -7,5 +7,7 @@ data class HeroResponse (
         @SerializedName("name") val name: String,
         @SerializedName("localized_name") val localizedName: String,
         @SerializedName("primary_attr") val primaryAttr: String,
-        @SerializedName("attack_type") val attackType: String
+        @SerializedName("attack_type") val attackType: String,
+        @SerializedName("icon") val icon: String
+
 )

@@ -9,4 +9,5 @@ class HeroInteractor @Inject constructor(
     private val useCase: UserUseCase
 ) {
     fun getHeroes(): Single<List<Hero>> = useCase.getHeroes()
+    fun downloadIcon(path: String, diskPath: String) = useCase.downloadImage(path, diskPath)
 }

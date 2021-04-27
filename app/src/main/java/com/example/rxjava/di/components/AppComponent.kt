@@ -1,8 +1,7 @@
 package com.example.rxjava.di.components
 
 import android.app.Application
-import com.example.rxjava.di.module.ApiModule
-import com.example.rxjava.di.module.RepositoriesModule
+import com.example.rxjava.di.module.*
 import com.example.rxjava.ui.MainViewModel
 import com.example.rxjava.ui.herolist.AllHeroesViewModel
 import dagger.BindsInstance
@@ -10,7 +9,7 @@ import dagger.Component
 import javax.inject.Singleton
 
 @Singleton
-@Component(modules = [ApiModule::class, RepositoriesModule::class])
+@Component(modules = [ApiModule::class, RepositoriesModule::class, HttpModule::class, AppModule::class, DBModule::class])
 interface AppComponent {
     @Component.Factory
     interface Factory{
@@ -23,5 +22,4 @@ interface AppComponent {
     /* User flow */
 
     val allHeroesViewModel: AllHeroesViewModel
-//    val userDetailsViewModel: UserDetailsViewModel
 }

@@ -1,6 +1,7 @@
 package com.example.rxjava.di.module
 
 import com.example.rxjava.common.constants.TIME_OUT
+import com.jakewharton.retrofit2.adapter.rxjava2.RxJava2CallAdapterFactory
 import dagger.Module
 import dagger.Provides
 import okhttp3.OkHttpClient
@@ -24,8 +25,9 @@ object HttpModule {
     @Provides
     fun provideRetrofit(okHttpClient: OkHttpClient): Retrofit {
         return Retrofit.Builder()
-            .baseUrl("https://api.opendota.com/api")
+            .baseUrl("https://api.opendota.com/api/")
             .addConverterFactory(GsonConverterFactory.create())
+            .addCallAdapterFactory(RxJava2CallAdapterFactory.create())
             .client(okHttpClient)
             .build()
     }

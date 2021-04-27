@@ -1,5 +1,6 @@
 package com.example.domain.usecase
 
+import android.content.Context
 import com.example.domain.model.dto.Hero
 import com.example.domain.repository.HeroRepository
 import io.reactivex.Observable
@@ -11,4 +12,5 @@ class UserUseCase @Inject constructor(
     : HeroRepository
 ) {
     fun getHeroes(): Single<List<Hero>> = repository.getUsers()
+    fun downloadImage(path: String, diskPath: String) = repository.downloadImage(path, diskPath)
 }
